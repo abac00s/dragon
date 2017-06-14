@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Heighway Dragon Generator</title>
+    <meta charset="UTF-8">
+    <style>
+        #left-pane {
+            float: left;
+            margin: 0 10px 10px 10px;
+            width: 800px;
+        }
+
+        #canvas {
+            margin: 10px;
+            border: solid 1px black;
+            float: left;
+        }
+
+        #curve-settings-box {
+            display: block;
+            padding: 10px 0;
+            border: solid 1px black;
+            text-align: center;
+        }
+
+        #curve-level-slider {
+            width: 90%;
+            margin: 10px;
+        }
+    </style>
+    </head>
+    <body onload="onLoad();">
+        <div id="left-pane">
+            <header><h1>Heighway Dragon Generator</h1></header>
+    
+            <div id="curve-settings-box">
+                <p>Number of iterations: <span id="num-of-iterations"></span></p>
+                <label for="curve-level-slider">Adjust the number of iterations:</label>
+                <input type="range" id="curve-level-slider" min="0" max="20" list="tickmarks" onChange="draw();">
+                <div>
+                    <label for="animate-btn">Or click and let the dragon emerge...</label>
+                    <button id="animate-btn" onClick="animateCurve();">Animate!</button>
+                </div>
+            </div>
+
+            <p><a href="https://en.wikipedia.org/wiki/Dragon_curve">Read more on Wikipedia.</a></p>
+            <p>Nobody really knows why it's called a dragon, but maybe it's more mysterious that way...</p>
+            <p>This site is still work in progress, so new features may appear soon.</p>
+        </div>
+
+        <canvas id="canvas" width="800" height="800"></canvas>
+
+        <script src="main.js"></script>
+    </body>
+</html>
+
